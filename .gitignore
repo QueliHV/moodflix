@@ -1,0 +1,22 @@
+# Virtual env
+.venv/
+__pycache__/
+*.pyc
+
+# Dados e modelos
+model/artifacts/
+data/raw/*
+data/processed/*
+*.joblib
+*.pkl
+*.bin
+*.safetensors
+
+# Checkpoints notebooks
+.ipynb_checkpoints/
+
+# Configurações locais
+.env
+kaggle.json
+token-*.*
+.DS_Store
