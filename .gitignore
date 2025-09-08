@@ -25,10 +25,14 @@ data/
 # =======================
 # MODELOS / PESADOS
 # =======================
+# Ignora tudo em model/
 model/
+# Reabre a pasta artifacts
 !model/artifacts/
+# Ignora tudo dentro de artifacts
 model/artifacts/*
-!model/artifacts/emotion_svm_en_val_best.joblib  # mantém só o modelo campeão
+# Des-ignora APENAS o campeão
+!model/artifacts/emotion_svm_en_val_best.joblib
 
 # =======================
 # TOKENS / SEGREDOS
@@ -38,3 +42,8 @@ model/artifacts/*
 kaggle.json
 token-*.*
 hf_*.*
+
+# =======================
+# Arquivo do macOS
+# =======================
+.DS_Store
