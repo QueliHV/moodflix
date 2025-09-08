@@ -1,22 +1,40 @@
-# Virtual env
+# =======================
+# AMBIENTE PYTHON
+# =======================
 .venv/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.log
 
-# Dados e modelos
-model/artifacts/
-data/raw/*
-data/processed/*
-*.joblib
-*.pkl
-*.bin
-*.safetensors
+# =======================
+# NOTEBOOKS / CHECKPOINTS
+# =======================
+*.ipynb_checkpoints
+notebooks/*
 
-# Checkpoints notebooks
-.ipynb_checkpoints/
+# =======================
+# DADOS
+# =======================
+data/
+*.csv
+*.tsv
+*.xlsx
 
-# Configurações locais
+# =======================
+# MODELOS / PESADOS
+# =======================
+model/
+!model/artifacts/
+model/artifacts/*
+!model/artifacts/emotion_svm_en_val_best.joblib  # mantém só o modelo campeão
+
+# =======================
+# TOKENS / SEGREDOS
+# =======================
 .env
+*.env
 kaggle.json
 token-*.*
-.DS_Store
+hf_*.*
