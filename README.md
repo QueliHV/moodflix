@@ -24,6 +24,7 @@ cd moodflix
 pip install -r requirements.txt
 python -m streamlit run app/streamlit_app.py   
 
+
 ## 🔑 Configuração
 Crie um arquivo .env com:
 TMDB_API_KEY=seu_token_aqui
