@@ -1,14 +1,18 @@
 # streamlit_app.py
 import base64
+import sys
 from pathlib import Path
 import streamlit as st
+
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from core.inference import (
     predict_emotion_pt,
     EMOTION_TO_GENRES_DIRECT,
     EMOTION_TO_GENRES_INVERSE,
 )
-
 from app.tmdb_client import discover_movies, poster_url
 
 # ---------------------- CONFIG ----------------------
