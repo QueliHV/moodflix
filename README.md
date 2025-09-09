@@ -10,12 +10,21 @@ MoodFlix é uma aplicação que recomenda filmes conforme o humor do usuário.
 5. A API do TMDb é usada para buscar os filmes.
 6. O usuário escolhe se quer filmes que **combinem** ou que **mudem** o humor.
 
+
+## 🖼️ Demonstração
+
+![Tela inicial](app/assets/tela_inicial.png)
+![Resultado da análise](app/assets/resultado.png)
+![Sugestões de filmes](app/assets/sugestoes.png)
+
+
 ## 🛠️ Tecnologias
 - Python 3.13
 - Streamlit
 - scikit-learn
 - Hugging Face Transformers
 - TMDb API
+
 
 ## 📦 Instalação
 ```bash
