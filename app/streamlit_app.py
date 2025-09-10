@@ -143,7 +143,9 @@ if st.button("Sugerir filmes"):
 
             overview = it.get("overview", "")
 
-            st.write(f"Encontrou filmes - colunas: {cols}")                    
+            st.write(f"Encontrou filmes - colunas: {cols}")         
+
+            st.write("DEBUG poster:", type(poster).__name__, poster)           
 
             with cols[i % len(cols)]:
                 if poster:
