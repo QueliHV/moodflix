@@ -1,9 +1,21 @@
-streamlit
-scikit-learn
-pandas
-numpy
-joblib
-transformers
-requests
-python-dotenv
+# Web/App
+streamlit>=1.33,<1.40
+
+# ML clássico (compatível com o .joblib treinado)
+scikit-learn==1.7.1
+joblib==1.4.2
+numpy>=1.26,<3
+pandas>=2.2
+
+# NLP / Hugging Face
+transformers>=4.44,<4.47
+sentencepiece>=0.2.0         # necessário para MarianMT (Helsinki-NLP)
+accelerate>=0.33.0           # opcional, ajuda em performance/dispatch
+
+# PyTorch (deixe sem versão para o Streamlit Cloud escolher a wheel compatível)
 torch
+
+# Utilidades
+requests>=2.31
+python-dotenv>=1.0.1
+
