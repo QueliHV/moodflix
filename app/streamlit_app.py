@@ -130,6 +130,9 @@ if st.button("Sugerir filmes"):
         for i, it in enumerate(items):
             title = it.get("title") or it.get("name")
             year = (it.get("release_date") or "????")[:4]
+
+            st.write(f"Encontrou filmes - titulo: {title}")                    
+
             poster = poster_url(it.get("poster_path"))
             vote = it.get("vote_average", 0.0)
             overview = it.get("overview", "")
