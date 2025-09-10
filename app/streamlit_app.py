@@ -134,8 +134,16 @@ if st.button("Sugerir filmes"):
             st.write(f"Encontrou filmes - titulo: {title}")                    
 
             poster = poster_url(it.get("poster_path"))
+
+            st.write(f"Encontrou filmes - poster: {poster}")                    
+
             vote = it.get("vote_average", 0.0)
+
+            st.write(f"Encontrou filmes - voto: {vote}")                    
+
             overview = it.get("overview", "")
+
+            st.write(f"Encontrou filmes - colunas: {cols}")                    
 
             with cols[i % len(cols)]:
                 if poster:
