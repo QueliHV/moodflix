@@ -92,6 +92,8 @@ if st.button("Sugerir filmes"):
         st.error("TMDB_API_KEY não configurada nos Secrets do Streamlit.")
         st.stop()
 
+    st.write(f"Vai buscar filme")        
+
     # 3) Buscar filmes (apenas UMA chamada)
     with st.spinner("Buscando filmes na TMDb..."):
         try:
