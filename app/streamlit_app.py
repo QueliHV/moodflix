@@ -39,11 +39,6 @@ mode = st.radio("Quer um filme que…", ["Combinar", "Mudar"])
 ordenacao = st.radio("Como ordenar?", ["Populares", "Nota alta", "Clássicos"])
 top_k = st.slider("Quantas sugestões mostrar?", 3, 10, 5)
 
-if st.checkbox("Rodar autoteste do modelo"):
-    pred, text_en_test, det = predict_emotion_pt("estou muito feliz hoje")
-    st.write("Autoteste:", pred)
-    st.write("EN:", text_en_test)
-
 if st.button("Sugerir filmes"):
     if not user_text.strip():
         st.warning("Digite seu humor antes de pedir sugestões.")
@@ -92,8 +87,6 @@ if st.button("Sugerir filmes"):
         st.error("TMDB_API_KEY não configurada nos Secrets do Streamlit.")
         st.stop()
 
-    st.write(f"Vai buscar filme")        
-
     # 3) Buscar filmes (apenas UMA chamada)
     with st.spinner("Buscando filmes na TMDb..."):
         try:
@@ -115,15 +108,11 @@ if st.button("Sugerir filmes"):
             movies = []
 
 
-    st.write(f"Fez a busca filmes")                    
-
     # 4) Exibir
     st.subheader("Sugestões")
     if not movies:
         st.info("Nenhum filme encontrado. Tente descrever um pouco mais como você está se sentindo.")
     else:
-
-        st.write(f"Encontrou filmes")                    
 
         items = movies[:top_k]
         cols = st.columns(len(items)) if items else [st]
@@ -131,21 +120,9 @@ if st.button("Sugerir filmes"):
             title = it.get("title") or it.get("name")
             year = (it.get("release_date") or "????")[:4]
 
-            st.write(f"Encontrou filmes - titulo: {title}")                    
-
             poster = poster_url(it.get("poster_path"))
-
-            st.write(f"Encontrou filmes - poster: {poster}")                    
-
             vote = it.get("vote_average", 0.0)
-
-            st.write(f"Encontrou filmes - voto: {vote}")                    
-
             overview = it.get("overview", "")
-
-            st.write(f"Encontrou filmes - colunas: {cols}")         
-
-            st.write("DEBUG poster:", type(poster).__name__, poster)           
 
             with cols[i % len(cols)]:
                 if poster:
