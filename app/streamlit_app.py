@@ -114,11 +114,17 @@ if st.button("Sugerir filmes"):
             st.error(f"Erro ao consultar a TMDb: {e}")
             movies = []
 
+
+    st.write(f"Fez a busca filmes")                    
+
     # 4) Exibir
     st.subheader("Sugestões")
     if not movies:
         st.info("Nenhum filme encontrado. Tente descrever um pouco mais como você está se sentindo.")
     else:
+
+        st.write(f"Encontrou filmes")                    
+
         items = movies[:top_k]
         cols = st.columns(len(items)) if items else [st]
         for i, it in enumerate(items):
