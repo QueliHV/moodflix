@@ -15,16 +15,7 @@ from core.inference import (
 )
 from app.tmdb_client import discover_movies, poster_url
 
-# ------------------ WARM-UP ------------------
-if "warmed_up" not in st.session_state:
-    st.info("🕐 Carregando modelos pela primeira vez (pode levar alguns segundos)...")
-    # Chama o modelo 1x com uma frase dummy só para carregar o tradutor + SVM
-    try:
-        _ = predict_emotion_pt("teste de inicialização")
-    except Exception as e:
-        st.warning(f"Falha no warm-up: {e}")
-    st.session_state["warmed_up"] = True
-# ---------------------------------------------
+
 
 # ---------------------- CONFIG ----------------------
 st.set_page_config(page_title="MoodFlix", page_icon="🎬", layout="wide")
