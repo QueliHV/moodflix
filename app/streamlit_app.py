@@ -38,6 +38,11 @@ mode = st.radio("Quer um filme que…", ["Combinar", "Mudar"])
 ordenacao = st.radio("Como ordenar?", ["Populares", "Nota alta", "Clássicos"])
 top_k = st.slider("Quantas sugestões mostrar?", 3, 10, 5)
 
+if st.checkbox("Rodar autoteste do modelo"):
+    pred, text_en_test, det = predict_emotion_pt("estou muito feliz hoje")
+    st.write("Autoteste:", pred)
+    st.write("EN:", text_en_test)
+
 if st.button("Sugerir filmes"):
     if not user_text.strip():
         st.warning("Digite seu humor antes de pedir sugestões.")
