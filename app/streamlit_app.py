@@ -3,6 +3,7 @@ import base64
 import sys
 from pathlib import Path
 import streamlit as st
+import os
 
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
@@ -85,6 +86,11 @@ if st.button("Sugerir filmes"):
         st.markdown(f"**Emoção detectada:** `{emotion}`")
         st.caption(f"Gêneros mapeados: {', '.join(genres)}")   
     
+
+    
+    if not os.getenv("TMDB_API_KEY"):
+        st.error("TMDB_API_KEY não configurada nos Secrets do Streamlit.")
+        st.stop()
 
     # 3) Buscar filmes (apenas UMA chamada)
     with st.spinner("Buscando filmes na TMDb..."):
