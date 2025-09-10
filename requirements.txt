@@ -1,4 +1,4 @@
-''' 
+
 # Web/App
 streamlit==1.38.0
 
@@ -19,6 +19,8 @@ torch
 # Utilidades
 requests>=2.31
 python-dotenv>=1.0.1
+
+
 '''
 
 
@@ -32,3 +34,5 @@ transformers==4.44.2
 torch==2.4.0
 requests==2.32.3
 python-dotenv==1.0.1
+
+'''
